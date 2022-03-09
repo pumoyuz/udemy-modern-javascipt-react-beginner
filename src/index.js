@@ -69,17 +69,41 @@
 // function func1(str) {
 //   return str;
 // }
-const func1 = function (str) {
-  return str;
-};
-console.log(func1("func1です"));
+// const func1 = function (str) {
+//   return str;
+// };
+// console.log(func1("func1です"));
 
 // アロー関数
 //   const func2 = (str) => { // strの()は省略可能
 //   return str; // 囲ってるときはreturn必須
 // };
-const func2 = (str) => str; // 処理が1行のときは{}も省略可能
-console.log(func2("func2です"));
+// const func2 = (str) => str; // 処理が1行のときは{}も省略可能
+// console.log(func2("func2です"));
 
-const func3 = (num1, num2) => num1 + num2;
-console.log(func3(10, 20));
+// const func3 = (num1, num2) => num1 + num2;
+// console.log(func3(10, 20));
+
+/**
+ * 分割代入
+ */
+// const myProfile = {
+//   name: "オブジェクト",
+//   age: 28
+// };
+
+// const message1 = `名前は${myProfile.name}です。年齢は${myProfile.age}です。`;
+// console.log(message1);
+
+// const { name, age } = myProfile;
+// const message2 = `名前は${name}です。年齢は${age}です。`;
+// console.log(message2);
+
+const myProfile = ["配列", 28];
+
+const message3 = `名前は${myProfile[0]}です。年齢は${myProfile[1]}です。`;
+console.log(message3);
+
+const [name, age] = myProfile; //配列内には名前がないので順番に入る
+const message4 = `名前は${name}です。年齢は${age}です。`;
+console.log(message4);
