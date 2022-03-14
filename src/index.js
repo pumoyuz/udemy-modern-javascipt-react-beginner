@@ -111,6 +111,42 @@
 /**
  * デフォルト値
  */
-const sayHello = (name = "ゲスト") => console.log(`こんにちは!${name}さん`);
-sayHello("テスト");
-sayHello(); // ="ゲスト" を入れてないとundefinedさんになる
+// const sayHello = (name = "ゲスト") => console.log(`こんにちは!${name}さん`);
+// sayHello("テスト");
+// sayHello(); // ="ゲスト" を入れてないとundefinedさんになる
+
+/**
+ * スプレッド構文 ...
+ */
+//配列の展開
+// const arr1 = [1, 2];
+// // console.log(arr1);
+// // console.log(...arr1);
+
+// const sumFunc = (num1, num2) => console.log(num1 + num2);
+// // sumFunc(arr1[0], arr1[1]);
+// sumFunc(...arr1); // 順番に処理してる
+
+// まとめる
+// const arr2 = [1, 2, 3, 4, 5];
+// const [num1, num2, ...arr3] = arr2;
+// console.log(num1);
+// console.log(num2);
+// console.log(arr3); // 残りをまとめて受け取る
+
+// 配列のコピー、結合
+const arr4 = [10, 20];
+const arr5 = [30, 40];
+
+const arr6 = [...arr4]; // arr4をコピー
+arr6[0] = 100;
+console.log(arr6);
+console.log(arr4); // スプレット構文でコピーすると元の配列は影響を受けない
+
+// const arr7 = [...arr4, ...arr5]; // 結合
+// console.log(arr7);
+
+// const arr8 = arr4; // これでもコピーはできるけど、
+// console.log(arr8);
+// arr8[0] = 100;
+// console.log(arr4); // 参照元が引き継がれるので元の配列まで影響を受けてしまい、バグの原因になる
