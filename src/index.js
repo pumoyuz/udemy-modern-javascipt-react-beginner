@@ -135,13 +135,13 @@
 // console.log(arr3); // 残りをまとめて受け取る
 
 // 配列のコピー、結合
-const arr4 = [10, 20];
-const arr5 = [30, 40];
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
 
-const arr6 = [...arr4]; // arr4をコピー
-arr6[0] = 100;
-console.log(arr6);
-console.log(arr4); // スプレット構文でコピーすると元の配列は影響を受けない
+// const arr6 = [...arr4]; // arr4をコピー
+// arr6[0] = 100;
+// console.log(arr6);
+// console.log(arr4); // スプレット構文でコピーすると元の配列は影響を受けない
 
 // const arr7 = [...arr4, ...arr5]; // 結合
 // console.log(arr7);
@@ -150,3 +150,36 @@ console.log(arr4); // スプレット構文でコピーすると元の配列は�
 // console.log(arr8);
 // arr8[0] = 100;
 // console.log(arr4); // 参照元が引き継がれるので元の配列まで影響を受けてしまい、バグの原因になる
+
+/**
+ * mapやfilterを使った配列の処理
+ */
+const nameArr = ["田中", "山田", "佐藤"];
+// 従来のやりかた
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(`${index + 1}番目は${nameArr[index]}です`);
+// }
+
+// map
+// const nameArr2 = nameArr.map((name) => { // 順に値が入ってきて
+//   return name; // 順番に返して新しい関数を作る
+// });
+// console.log(nameArr2);
+
+// nameArr.map((name, index) => console.log(`${index + 1}は${name}です`)); //従来のとやりかた同じことができる
+
+// filter
+// const numArr = [1, 2, 3, 4, 5];
+// const newNumArr = numArr.filter((num) => {
+//   return num % 2 === 0; // 2で割った余りが0のとき=偶数のとき
+// });
+// console.log(newNumArr);
+
+const newNameArr = nameArr.map((name) => {
+  if (name === "佐藤") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
