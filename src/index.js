@@ -10,8 +10,22 @@ const onClickAdd = () => {
   li.className = "test";
   li.innerText = inputText;
 
+  // buttonを生成
+  const completeButton = document.createElement("button");
+  completeButton.innerText = "完了";
+  completeButton.addEventListener("click", () => {
+    alert("完了");
+  });
+
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", () => {
+    alert("削除");
+  });
+
   // liの子要素に各要素を設定
-  // li.appendChild(btn);
+  li.appendChild(completeButton);
+  li.appendChild(deleteButton);
 
   // 未完了リストに追加
   document.getElementById("incomplete-list").appendChild(li);
