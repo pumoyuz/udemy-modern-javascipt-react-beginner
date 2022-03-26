@@ -20,7 +20,7 @@ button:hover {
   cursor: pointer;
 }
 
-button:first-child {
+button:first-of-type {
   margin-left: 8px;
 }
 
