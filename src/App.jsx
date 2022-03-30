@@ -1,7 +1,14 @@
 import React from "react";
 
+//コンポーネント名はパスカルケースで
 const App = () => {
-  //コンポーネント名はパスカルケースで
+  const onClickButton = () => alert();
+  // jsオブジェクトとしてスタイルを渡せる
+  const contentStyle = {
+    color: "blue",
+    fontSize: "18px"
+  };
+
   return (
     <>
       {/* 
@@ -9,8 +16,10 @@ const App = () => {
       不要なdivなどを防ぐためにReact.Fragmentで囲む
       空のかっこもReact.Fragmentと同じ扱いになる 
       */}
-      <h1>こんにちは！</h1>
-      <p>お元気ですか？</p>
+      <h1 style={{ color: "red" }}>こんにちは！</h1>
+      <p style={contentStyle}>お元気ですか？</p>
+      {/* なみかっこの中にはjsが書ける */}
+      <button onClick={onClickButton}>ボタン</button>
     </>
   );
 };
